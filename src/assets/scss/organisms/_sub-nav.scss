@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*
+  sub-nav
+ */
+.sub-nav {
+  background: $base;
+  style-type: none;
+  &__item {
+    a {
+      display: block;
+      padding: 10px 16px;
+    }
+  }
+}

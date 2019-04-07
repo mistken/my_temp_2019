@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/*
+  image / thumb
+ */
+
+// 画像ラッパー
+.image {
+  width: 100%;
+  // margin-bottom: 10px;
+  // text-align: center;
+  // &:last-of-type {
+  //   margin-bottom: 0 !important;
+  // }
+
+  &__block {
+  }
+
+  // 製品画像
+  &.is-product {
+  }
+  &.is-product-thumb {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  // イラスト
+  &.is-ill-1 {
+  }
+  &.is-ill-2 {
+    img {
+      width: 320px !important;
+    }
+  }
+  &.is-ill-h350 {
+    img {
+      max-height: 300px;
+    }
+  }
+
+  img {
+    flex-shrink: 0;
+    max-width: 100%;
+    margin-bottom: 10px;
+    vertical-align: bottom;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  video {
+    max-width: 100%;
+  }
+}
+
+.figure {
+  margin: 0;
+  padding: 1em 20px;
+  width: 100%;
+  text-align: center;
+
+  &__caption {
+  }
+  .ttl {
+    text-align: left;
+  }
+  figcaption {
+    margin: 5px 0 !important;
+    text-align: center;
+  }
+  & img {
+    margin-bottom: 10px;
+    vertical-align: bottom;
+  }
+}
+
+// 画像自体
+.thumb {
+  &.is-round {
+    border-radius: 50%;
+  }
+  &.is-round-1 {
+    width: 70px;
+    height: 70px;
+    border: 2px solid $lt-gray;
+  }
+  &.is-round-2 {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 5px;
+  }
+
+  &.is-inline {
+    position: relative;
+    top: 5px;
+  }
+
+  // メディア画像サムネイル
+  &.is-media {
+  }
+
+  &.is-video {
+  }
+
+  // レシピ
+
+  &.is-recipe-h-fix {
+    height: 155px;
+    @include media(sp) {
+      height: 105px;
+    }
+  }
+  &.is-recipe {
+    height: 160px;
+    background: none;
+    @include media(sp) {
+      height: 110px;
+    }
+  }
+
+  // // 製品サムネイル
+  // &.is-product {
+  //   width: 140px;
+  // }
+
+  &.is-hero {
+  }
+}
+
+// ロゴ
+.is-logo {
+  &-header {
+    max-height: 180px;
+    @include media(sp) {
+      max-height: 110px !important;
+    }
+  }
+  &-1 {
+    width: 200px;
+  }
+  &-2 {
+    width: 120px;
+  }
+}
+
+// セルフメディケーションマーク
+.is-self-1,
+.is-self-2 {
+  position: absolute;
+  width: auto;
+  z-index: 10;
+}
+.is-self-1 {
+  top: 15px;
+  left: 15px;
+}
+.is-self-2 {
+  top: 3px;
+  left: 5px;
+  img {
+    width: 50px;
+  }
+}

@@ -1,0 +1,307 @@
+@charset "UTF-8";
+/*
+  recipe
+ */
+
+.recipe {
+  margin-bottom: 60px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__block {
+    margin-bottom: 40px;
+    // &:last-of-type {
+    //   margin-bottom: 0;
+    // }
+  }
+
+  &__intro {
+    & > .col {
+      padding: 20px;
+    }
+  }
+  &__material {
+  }
+  &__make {
+  }
+
+  &__material,
+  &__make {
+    width: 100%;
+    .list__item {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__sub {
+    width: 100%;
+    color: #fff;
+    padding: 20px;
+
+    li {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &__image {
+    max-width: 700px;
+  }
+}
+
+// レシピ リスト枠
+.recipe__list-wrapp {
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+// 材料 MTでの入れやすさを重視してこちらを利用
+.zairyo {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    @include font-size(16);
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    .name {
+    }
+    .value {
+    }
+  }
+  &-group {
+    border-left: 2px solid #ccc;
+    padding: 5px 0 0 18px;
+    margin: 24px 0 24px 20px;
+  }
+}
+
+// 個別対応
+// インデックス最新記事枠
+.recipe-latest {
+  position: relative;
+  margin-bottom: 20px;
+  &__block {
+    padding: 20px;
+  }
+
+  // レシピロゴ
+  img.is-logo-recipe {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 120px;
+  }
+}
+
+// 背景色
+.is-fukeshirazu,
+.is-bg-fukeshirazu {
+  background: #f98d5e;
+}
+
+.is-nikusakana,
+.is-bg-nikusakana {
+  background: green;
+}
+
+.is-stress,
+.is-bg-stress,
+.is-guide,
+.is-bg-guide,
+.is-support,
+.is-bg-support,
+.is-kirei,
+.is-bg-kirei,
+.is-caldiet,
+.is-bg-caldiet,
+.is-manzoku,
+.is-bg-manzoku,
+.is-kids,
+.is-bg-kids,
+.is-recipe,
+.is-bg-recipe,
+.is-metabo,
+.is-bg-metabo,
+.is-calcium,
+.is-bg-calcium,
+.is-healthy,
+.is-bg-healthy {
+  background: #f98d5e;
+}
+
+// 老けしらず
+.fukeshirazu .section-lead {
+  margin: 0;
+  padding: 16px 24px;
+  border: 2px solid #f98d5e;
+}
+@media screen and (max-width: 768px) {
+  .fukeshirazu .section-lead {
+    margin: 24px auto 0;
+    width: calc(100% - 32px);
+  }
+}
+.fukeshirazu .section-lead-head {
+  height: 0;
+  padding-top: 25%;
+  padding-bottom: 16px;
+  margin: 0;
+  background: #fff url(/k-1ban/assets/img/recipe/fukeshirazu_message.png) left 0
+    no-repeat;
+  background-size: contain;
+  border-bottom: 1px solid #f98d5e;
+}
+.fukeshirazu .section-lead-head span {
+  display: none;
+}
+.fukeshirazu .section-lead-body dt {
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.fukeshirazu .section-lead-body dl {
+  justify-content: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .fukeshirazu .section-lead-body {
+    padding: 0;
+  }
+}
+
+.fukeshirazu .section-lead-body dl {
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+}
+.fukeshirazu .section-lead-body dl + dl:not(.is-point) {
+  border-top: 1px solid #eee;
+}
+.fukeshirazu .section-lead-body dl dd {
+  margin: 0;
+}
+.fukeshirazu .section-lead-body dl.is-point {
+  display: block;
+  padding: 12px 0 12px 40px;
+  font-weight: bold;
+  color: #e88a61;
+}
+.fukeshirazu .section-lead-body dl.is-point dt {
+  padding: 0 0 8px 0;
+  font-size: 0.8em;
+}
+
+.fukeshirazu .section-lead,
+.bubble-wrapper .bubble {
+  border-radius: 4px;
+}
+
+.fukeshirazu .section-lead-body dl,
+.bubble-wrapper.has-teacher {
+  display: flex;
+}
+
+.fukeshirazu .section-lead-body dl {
+  align-items: center;
+}
+
+.fukeshirazu .section-lead-body dl {
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+}
+.fukeshirazu .section-lead-body dl + dl:not(.is-point) {
+  border-top: 1px solid #eee;
+}
+.fukeshirazu .section-lead-body dl dd {
+  margin: 0;
+}
+.fukeshirazu .section-lead-body dl.is-point {
+  display: block;
+  padding: 12px 0 12px 40px;
+  font-weight: bold;
+  color: #e88a61;
+}
+.fukeshirazu .section-lead-body dl.is-point dt {
+  padding: 0 0 8px 0;
+  font-size: 0.8em;
+}
+
+.bubble-wrapper .bubble {
+  position: relative;
+  padding: 16px;
+  border: 2px solid #f98d5e;
+  background: #fff;
+}
+.bubble-wrapper .bubble::before,
+.bubble-wrapper .bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: auto;
+}
+.bubble-wrapper .bubble::before {
+  bottom: 17px;
+  right: -25px;
+  border-style: solid;
+  border-color: transparent transparent #f98d5e transparent;
+  border-width: 0 24px 24px 0;
+}
+.bubble-wrapper .bubble:after {
+  bottom: 19px;
+  right: -20px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  border-width: 0 22px 22px 0;
+}
+.bubble-wrapper.has-teacher {
+  align-items: flex-end;
+}
+.bubble-wrapper.has-teacher .bubble {
+  width: calc(100% - 150px);
+  margin-right: 20px;
+}
+.bubble-wrapper.has-teacher img {
+  width: 150px;
+}
+@media screen and (max-width: 768px) {
+  .bubble-wrapper .bubble::before {
+    bottom: -26px;
+    right: 1px;
+    left: 0;
+    border-style: solid;
+    border-color: transparent transparent #f98d5e transparent;
+    border-width: 0 24px 24px 0;
+    transform: rotate(90deg);
+  }
+  .bubble-wrapper .bubble:after {
+    bottom: -21px;
+    right: 0;
+    left: 0;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    border-width: 0 22px 22px 0;
+    transform: rotate(90deg);
+  }
+  .bubble-wrapper.has-teacher {
+    display: block;
+  }
+  .bubble-wrapper.has-teacher .bubble {
+    width: 100%;
+    margin: 0 auto 16px;
+  }
+  .bubble-wrapper.has-teacher img {
+    width: 150px;
+  }
+}

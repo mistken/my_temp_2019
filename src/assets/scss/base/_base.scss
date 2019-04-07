@@ -1,0 +1,573 @@
+@charset "UTF-8";
+/*
+  base
+ */
+
+/*
+baseには共通設定を
+*/
+
+// color
+// 色
+$black: #333333;
+
+$lt-gray: #e9e9e9; // light 略にいつか変更
+$md_gray: #eee;
+$gray: #aaa;
+$dk-gray: #776760;
+
+$lt-orange: #ffdcb8;
+$md-orange: #fdb063;
+$orange: #ff9933;
+$dk-orange: #e97a0b;
+
+$yellow: rgb(236, 224, 46);
+
+$brown: #4d2200;
+
+$lt-green: #eef3d0;
+$green: #8bc55c;
+
+$lt-blue: #eaf6fd;
+$blue: #eaf6fd;
+$dk-blue: #70a5c4;
+
+// 意味
+$key: #d70c18; // #e60012;
+$dk-key: #c5232e;
+$base: #fff8ea;
+
+$text_def: $black;
+
+// コンテンツ色
+$check: #f5b55d;
+$h_menu: #37b381;
+$uranai: #5c77d0;
+$yakuso: #84be42;
+
+// 色：背景
+.is-bg-key {
+  background-color: $key;
+}
+.is-bg-dk-key {
+  background-color: $dk-key;
+}
+.is-bg-base {
+  background-color: $base;
+}
+.is-bg-white {
+  background-color: #fff;
+}
+.is-bg-gray {
+  background-color: $gray;
+}
+.is-bg-lt-gray {
+  background-color: $lt_gray;
+}
+.is-bg-dk-gray {
+  background-color: $dk-gray;
+}
+.is-bg-lt-orange {
+  background-color: $lt-orange;
+}
+.is-bg-md-orange {
+  background-color: $md-orange;
+}
+.is-bg-orange {
+  background-color: $orange;
+}
+.is-bg-dk-orange {
+  background-color: $orange;
+}
+.is-bg-green {
+  color: #fff;
+  background-color: $green;
+}
+.is-bg-lt-green {
+  background-color: $lt-green;
+}
+.is-bg-lt-blue {
+  background-color: $lt-blue;
+}
+.is-bg-dk-blue {
+  color: #fff;
+  background-color: $dk-blue;
+}
+
+.is-bg-corp-gray {
+  background-color: #eff2f7;
+}
+
+.is-bg-check,
+.is-bg-kounenki,
+.is-bg-hiro {
+  background-color: $check;
+}
+.is-bg-h_menu {
+  background-color: $h_menu;
+}
+.is-bg-uranai {
+  background-color: $uranai;
+}
+.is-bg-yakuso {
+  background-color: $yakuso;
+}
+
+// 色：ライン
+.is-line-key {
+  border-color: $key;
+}
+.is-line-dk-key {
+  border-color: $dk-key;
+}
+.is-line-gray {
+  border-color: $lt-gray;
+}
+.is-line-white {
+  border-color: #fff;
+}
+.is-line-green {
+  border-color: $green;
+}
+.is-line-orange {
+  border-color: $orange;
+}
+.is-line-md-orange {
+  border-color: $md-orange;
+}
+
+// 色：テキスト
+.is-key {
+  color: $key;
+}
+.is-white {
+  color: #fff;
+}
+.is-black,
+.is-black:before {
+  color: $black !important;
+}
+.is-gray {
+  color: $gray;
+}
+.is-orange {
+  color: $orange;
+}
+.is-lt-orange {
+  color: $lt-orange;
+}
+.is--dk-orange {
+  color: $dk-orange;
+}
+.is-green {
+  color: $green;
+}
+.is-lt-green {
+  color: $lt-green;
+}
+.is-blue {
+  color: $dk-blue;
+}
+.is-yellow {
+  color: $yellow;
+}
+.is-brown {
+  color: $brown;
+}
+
+// 健康情報固定色
+.is-check {
+  color: $check;
+}
+.is-h_menu {
+  color: $h_menu;
+}
+.is-uranai {
+  color: $uranai;
+}
+.is-yakuso {
+  color: $yakuso;
+}
+
+//ヘルスチェック用 warning
+.is-war-1 {
+  color: $key;
+}
+.is-war-2 {
+  color: $dk-orange;
+}
+.is-war-3 {
+  color: $orange;
+}
+.is-war-4 {
+}
+
+body {
+  font-family: "Yu Gothic", YuGothic, "游ゴシック", "ヒラギノ角ゴシック Pro",
+    "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+  color: #333;
+}
+_:-ms-lang(x)::-ms-backdrop,
+body {
+  font-family: メイリオ, Meiryo, "Yu Gothic", YuGothic, "游ゴシック",
+    "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", Osaka,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #333;
+}
+
+// 明朝
+.is-mintyo {
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3",
+    "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+// 文字サイズ拡大縮小
+.is-fs-m {
+  font-size: 100%;
+}
+.is-fs-l {
+  font-size: 120%;
+}
+
+//リンクスタイル
+a {
+  user-select: none;
+  text-decoration: underline;
+  outline: none;
+  color: #36c;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// box sizing
+* {
+  box-sizing: border-box;
+}
+
+// ページ内リンク位置
+// PCサイズ
+@-webkit-keyframes modify {
+  0% {
+    padding-top: 50px;
+    margin-top: -50px;
+  }
+  100% {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+@keyframes modify {
+  0% {
+    padding-top: 50px;
+    margin-top: -50px;
+  }
+  100% {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+// SPサイズ
+@-webkit-keyframes modifySP {
+  0% {
+    padding-top: 84px;
+    margin-top: -84px;
+  }
+  100% {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+@keyframes modifySP {
+  0% {
+    padding-top: 84px;
+    margin-top: -84px;
+  }
+  100% {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+[id*="sec"]:target {
+  animation: modify 0.01s;
+}
+
+@include media(sp) {
+  [id*="sec"]:target {
+    animation: modifySP 0.01s;
+  }
+}
+
+// 共通
+/* ライン */
+[class*=" is-line-"] {
+  // color:$text_def;
+  border-style: solid;
+  border-width: 4px;
+}
+a[class*=" is-line-"] {
+  &:hover {
+    color: $key;
+    border-color: $key;
+  }
+}
+// ライン一部
+[class*=" is-line-b"] {
+  // color:$text_def;
+  border-style: none none solid none;
+  border-bottom-width: 4px;
+}
+[class*=" is-line-b-s"] {
+  // color:$text_def;
+  border-style: none none solid none;
+  border-bottom-width: 1px;
+}
+
+// 要素位置
+.is-center {
+  text-align: center;
+  justify-content: center;
+}
+.is-sp-center {
+  @include media(sp) {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.is-left {
+  text-align: left;
+  justify-content: flex-start;
+}
+.is-right {
+  text-align: right;
+  justify-content: flex-end;
+}
+.is-sp-right {
+  @include media(sp) {
+    text-align: right;
+    justify-content: flex-end;
+  }
+}
+// pc 固有
+.is-pc-right {
+  @include media(pc) {
+    text-align: right;
+    justify-content: flex-end;
+  }
+}
+
+// 縦横中央
+.is-vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  .ttl {
+    margin: 0;
+  }
+}
+
+// 縦横下中央
+.is-vh-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+// 縦中央
+.is-v-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+// トグル
+
+.toggle {
+  position: relative;
+  pointer-events: none;
+
+  &-trigger {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
+/*
+  ワンライナー
+  あまり使用しない
+  矛盾を!importantで解決しているので、要素を見直したらそもそもがアリエル。
+*/
+
+// width
+.is-w-1 {
+  max-width: 1200px;
+}
+.is-w-2 {
+  max-width: 1000px;
+}
+.is-w-3 {
+  max-width: 800px;
+}
+.is-w-4 {
+  max-width: 320px;
+}
+.is-w-auto {
+  width: auto !important;
+}
+
+// 固定値
+.is-w-300 {
+  max-width: 300px;
+}
+.is-w-340 {
+  max-width: 340px;
+}
+.is-w-400 {
+  max-width: 400px;
+}
+
+.is-w-30per {
+  width: 30%;
+}
+.is-w-50per {
+  width: 50%;
+}
+.is-w-70per {
+  width: 70%;
+}
+.is-w-100per {
+  width: 100%;
+}
+.is-w-30per,
+.is-w-50per,
+.is-w-70per {
+  @include media(sp) {
+    width: auto;
+  }
+}
+
+// 共通
+.is-w-4,
+.is-w-3,
+.is-w-2,
+.is-w-1,
+.is-w-300,
+.is-w-340,
+.is-w-400 {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  @include media(sp) {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+
+//高さ固定
+.is-fix-1 {
+  height: 400px;
+  @include media(sp) {
+    height: 300px;
+  }
+}
+.is-fix-2 {
+  height: 300px;
+  @include media(sp) {
+    height: 200px;
+  }
+}
+.is-fix-3 {
+  height: 200px;
+  padding: 0 60px;
+  @include media(sp) {
+    height: 140px;
+    padding: 0 20px;
+  }
+}
+.is-fix-4 {
+  height: 150px;
+  padding: 0 60px;
+  @include media(sp) {
+    height: 120px;
+    padding: 0 20px;
+  }
+}
+
+.is-fix-vh1 {
+  height: 70vh;
+  @include media(sp) {
+    height: 50vh;
+  }
+}
+
+// 要素
+.is-block {
+  display: block !important;
+}
+.is-inline {
+  display: inline-block !important;
+}
+
+//flex 例外的な
+.is-fl-less {
+  display: block !important;
+}
+
+// マージン取り消し 優先
+.is-m-less {
+  margin: 0 !important;
+}
+.is-mb-less {
+  margin-bottom: 0 !important;
+}
+// sp margin +1
+.is-sp-mb-1 {
+  @include media(sp) {
+    margin-bottom: 30px;
+  }
+}
+.is-sp-mb-2 {
+  @include media(sp) {
+    margin-bottom: 10px;
+  }
+}
+
+// padding
+.is-p-less {
+  padding: 0 !important;
+}
+.is-pb-less {
+  padding-bottom: 0 !important;
+}
+
+// sp 固有 display
+.is-sp-disp-none {
+  @include media(sp) {
+    display: none !important;
+  }
+}
+.is-sp-disp-block {
+  @include media(sp) {
+    display: block !important;
+  }
+}
+
+// cm
+// video::-webkit-media-controls {
+//   display: none !important;
+// }

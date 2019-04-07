@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+  content
+  用途：要素をレイアウトする
+ */
+
+/* ベース */
+.content {
+  & .txt,
+  & .image,
+  & .btn-group,
+  & .box,
+  & .container {
+    margin: 0 0 40px;
+  }
+  & .media {
+    & > .image {
+      margin-bottom: 10px;
+    }
+  }
+
+  // 区切り
+  .ttl.is-2 {
+    margin-top: 60px;
+  }
+  // @include media(sp) {
+  //   padding: 20px;
+  // }
+}
+
+// content内のカラム指定等に利用
+.content__block {
+}
+
+.content__item {
+}

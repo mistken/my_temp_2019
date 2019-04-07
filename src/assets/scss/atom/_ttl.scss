@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+/*
+  ttl
+ */
+
+.ttl {
+  &.is-1 {
+    margin: 0 0 14px;
+    @include font-size(32);
+    line-height: 1.3em;
+    font-weight: bold;
+    @include media(sp) {
+      @include font-size(24);
+      line-height: 1.3em;
+    }
+    // 丸囲み
+    .maru {
+      display: inline-block;
+      border-radius: 50%;
+      border: 1px solid #333;
+      padding-left: 0.15em;
+      height: 42px;
+      width: 42px;
+      @include media(sp) {
+        padding-left: 0.16em;
+        height: 33px;
+        width: 33px;
+      }
+    }
+    // IE11 ハック 強ゴールドルパールの（強）用 丸線
+    // is-1用 フォントサイズにより位置調整
+    _:-ms-lang(x)::-ms-backdrop,
+    .maru {
+      padding-top: 5px;
+    }
+  }
+  &.is-2 {
+    margin: 0 0 14px;
+    @include font-size(26);
+    line-height: 1.2em;
+    font-weight: bold;
+    @include media(sp) {
+      @include font-size(20);
+      line-height: 1.2em;
+    }
+  }
+  &.is-3 {
+    margin: 0 0 14px;
+    @include font-size(20);
+    line-height: 1.6em;
+    font-weight: bold;
+    @include media(sp) {
+      @include font-size(18);
+      line-height: 1.3em;
+    }
+  }
+  &.is-4 {
+    margin: 0 0 14px;
+    @include font-size(16);
+    line-height: 1.4em;
+    font-weight: normal;
+    @include media(sp) {
+      @include font-size(14);
+      line-height: 1.6em;
+    }
+    .maru {
+      border-radius: 50%;
+      padding-left: 0.21em;
+      border: 1px solid #333;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      @include media(sp) {
+        padding-left: 0.26em;
+        height: 23px;
+        width: 23px;
+      }
+    }
+    // IE11 ハック 強ゴールドルパールの（強）用 丸線
+    // is-4用 フォントサイズにより位置調整
+    _:-ms-lang(x)::-ms-backdrop,
+    .maru {
+      padding-top: 3px;
+    }
+  }
+
+  &.is-bold {
+    font-weight: bold;
+  }
+
+  // 固有
+  &.is-maincopy-1,
+  &.is-maincopy-1n {
+    @include font-size(42);
+    line-height: 1.5em;
+    @include media(sp) {
+      @include font-size(28);
+      line-height: 1.5em;
+    }
+  }
+
+  &.is-maincopy-2 {
+    @include font-size(40);
+    line-height: 1.5em;
+    @include media(sp) {
+      @include font-size(26);
+      line-height: 1.5em;
+    }
+  }
+  &.is-maincopy-3 {
+    @include font-size(36);
+    line-height: 1.6em;
+    @include media(sp) {
+      @include font-size(24);
+      line-height: 1.5em;
+    }
+  }
+
+  &.is-maincopy-1,
+  &.is-maincopy-2,
+  &.is-maincopy-3 {
+    margin: 0 0 24px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+
+  &.is-maincopy-1n {
+    margin: 0 0 24px;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+  }
+
+  &.is-index {
+    color: #fff;
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  // 共通
+  &.is-1,
+  &.is-2,
+  &.is-3,
+  &.is-4,
+  &.is-5 {
+  }
+
+  // タイトル 背景
+  &[class*="is-bg-"] {
+    padding: 9px 12px;
+    border-radius: 5px;
+  }
+
+  // タイトル ライン
+  // ボーダー位置
+  &.is-line-left {
+    border-style: solid;
+    border-width: 0 0 0 8px;
+    padding-left: 12px;
+  }
+  &.is-line-b {
+    padding-bottom: 8px;
+  }
+  // ボーダーカラー
+  &.is-line-key {
+    // background: #f7f7f7;
+  }
+
+  //空き調整
+  &.is-pagetitle {
+    margin: 40px 0;
+    @include media(sp) {
+      margin: 20px 0;
+    }
+  }
+
+  // 兄弟
+  & + & {
+    margin-top: 30px;
+  }
+
+  // 吹き出し
+  &.is-fukidashi {
+    position: relative;
+    padding: 0 0 10px;
+    background: #fff;
+    border-bottom: 4px solid #ededed;
+  }
+  &.is-fukidashi:after,
+  &.is-fukidashi:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &.is-fukidashi:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 12px;
+    margin-left: -12px;
+  }
+  &.is-fukidashi:before {
+    border-color: rgba(237, 237, 237, 0);
+    border-top-color: #ededed;
+    border-width: 18px;
+    margin-left: -18px;
+  }
+}
+
+// ライン（ボーダー）被せ
+.is-line-over {
+  margin: 0 0 14px;
+  position: relative;
+  padding-left: 10px;
+  border: none;
+
+  span {
+    display: inline-block;
+    background: #fff;
+    padding: 0 10px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $md_gray;
+  }
+}
+
+// グループ
+.ttl-group {
+  @include media(sp) {
+    width: 100%;
+  }
+
+  .ttl {
+    margin: 0 0 8px;
+  }
+  [class*="is-maincopy"] {
+    margin: 0 0 24px;
+  }
+  .txt {
+    margin: 0 0 10px;
+  }
+}

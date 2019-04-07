@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*
+  news
+  新着情報
+ */
+.news {
+  &__block {
+    display: none;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #efefef;
+    // トップの場合
+    &.is-top {
+      display: flex;
+    }
+  }
+  &__item {
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  .date {
+    @include font-size(14);
+  }
+  .label {
+    margin: 0 0 0 10px;
+    padding: 4px 5px;
+    border: 1px solid #eee;
+    background: #efefef;
+    @include font-size(12);
+  }
+  .date,
+  .label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}

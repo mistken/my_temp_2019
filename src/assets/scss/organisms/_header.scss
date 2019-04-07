@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/*
+  header
+ */
+
+.header {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  @include media(sp) {
+    height: 73px;
+  }
+
+  a {
+    &.txt {
+      color: #fff;
+      font-weight: normal;
+      text-decoration: none;
+
+      @include media(sp) {
+        color: $black;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__inner {
+    @include media(sp) {
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      z-index: 100;
+    }
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    @include media(sp) {
+      margin-top: 0;
+    }
+  }
+  &__top {
+    @include media(sp) {
+      position: absolute;
+      padding: 10px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      z-index: 100;
+    }
+  }
+
+  &__bottom.is-w-2 {
+    @include media(sp) {
+      padding: 0;
+    }
+  }
+
+  &__item {
+  }
+
+  //
+  &__user-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+    }
+  }
+}
+
+//ロゴ
+.logo {
+  margin: 0;
+  padding: 0;
+  a {
+    display: block;
+    width: 296px;
+    height: 30px;
+    background: url(../img/logo.svg) 0 0 no-repeat;
+    background-size: 100%;
+    color: $key;
+    @include media(sp) {
+      width: 200px;
+      height: 20px;
+    }
+  }
+  span {
+    display: none;
+  }
+}
+
+// ユーザー機能
+// フォントサイズ変更機能
+.font-size-change {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 0 0;
+  @include media(sp) {
+    display: none;
+  }
+  &__block {
+    padding-right: 10px;
+  }
+  // atom設定
+  .btn-group-has-line {
+    width: 100px;
+  }
+  .btn-fs {
+    position: relative;
+    margin: 0;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    @include font-size(15);
+
+    &:hover,
+    &.current {
+      background: #aaa;
+      border: 1px solid #aaa;
+      color: #fff;
+    }
+  }
+}
+
+// 検索
+.search {
+  position: relative;
+  @include media(sp) {
+    display: none;
+  }
+  &__input {
+    padding: 5px 32px 5px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px #aaa;
+    @include font-size(16);
+
+    &:focus {
+      outline: 2px solid $black;
+    }
+    &::placeholder {
+      color: #999;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    margin: 0;
+    padding: 0;
+    @include font-size(16);
+    border: none;
+    background: #fff;
+    color: #aaa;
+    outline: 0;
+    cursor: pointer;
+  }
+  _:-ms-lang(x)::-ms-backdrop,
+  &__btn {
+    top: 9px;
+  }
+
+  &.is-1 {
+    .search__input {
+      padding: 20px;
+      @include font-size(28);
+      @include media(sp) {
+        padding: 14px 50px 14px 14px;
+        @include font-size(16);
+      }
+    }
+    .search__btn {
+      @include font-size(28);
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      background: transparent;
+      @include media(sp) {
+        @include font-size(16);
+      }
+    }
+  }
+  &.is-keyword {
+    display: block;
+  }
+}
+
+/* パンくず モジュール
+ */
+.breadcrumbs {
+  margin: 0 auto;
+  padding: 0 !important;
+
+  &__list {
+    margin: 0 auto;
+    padding: 10px;
+  }
+  &__item {
+    display: inline;
+    a {
+      color: #666;
+      &:hover {
+        color: $key;
+      }
+    }
+    &:after {
+      content: ">";
+      display: inline-block;
+      margin: 0 6px;
+      color: #666;
+    }
+    &:last-of-type:after {
+      content: " ";
+    }
+  }
+}
+
+.breadcrumbs .breadcrumb-list .item {
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+.breadcrumbs .breadcrumb-list .item:before {
+  display: none;
+}
+.breadcrumbs .breadcrumb-list .item:after {
+  content: ">";
+  display: inline-block;
+  margin: 0 6px;
+  color: #000078;
+}
+
+.breadcrumbs .breadcrumb-list .home .icon-home {
+  display: inline;
+  font-size: 26px;
+  font-size: 1.625rem;
+  vertical-align: middle;
+}

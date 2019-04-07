@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/*
+  profile
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+
+  @include media(sp) {
+    padding: 60px 20px;
+    [class*="is-w"] {
+      padding: 0;
+    }
+  }
+
+  &.is-bg-repeat {
+    background-repeat: repeat;
+    background-position: 0;
+    background-size: auto;
+  }
+
+  &.is-has-cover {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(3, 48, 101, 0.45);
+    }
+    & > * {
+      z-index: 50;
+    }
+    &.is-cover-black {
+      &:before {
+        background-color: rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+
+  //メインビジュアル
+  &.is-main {
+    height: 500px;
+    @include media(sp) {
+      display: block;
+      height: 70vh;
+      background-position: 80% bottom;
+      background-size: 500px;
+      background-color: #4180c2;
+    }
+    .hero__title {
+      padding: 1vh 30px 30px;
+    }
+    .is-main-sub {
+      @include font-size(14);
+      line-height: 1.8em;
+      @include media(sp) {
+        @include font-size(12);
+        line-height: 2em;
+      }
+    }
+  }
+  // インデックス「全薬工業について」
+  //全薬工業について「事業領域」
+  &.is-corp,
+  &.is-field {
+    @include media(sp) {
+      background-position: 75% 0px;
+    }
+  }
+  //全薬工業についてメイン
+  &.is-corp-main {
+    @include media(sp) {
+      background-position: 72% 100%;
+      background-size: 1500px;
+      background-color: #4180c2;
+    }
+  }
+
+  // flexの場合
+  .row,
+  .sep-row {
+    align-items: center;
+
+    &.btn-group {
+      align-items: stretch;
+    }
+  }
+
+  // タイトル
+  &__ttl {
+  }
+  // テキスト
+  &__txt {
+  }
+
+  // ブロック  box.scssと共通性がよりあれば移動。
+  &__container {
+    @include media(sp) {
+      &[class*="is-w"] {
+        padding: 0;
+      }
+    }
+  }
+  &__block {
+  }
+  &__item {
+  }
+}

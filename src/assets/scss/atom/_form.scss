@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*
+  form
+ */
+
+.checkbox {
+  &.is-hidden {
+    display: none;
+  }
+
+  &:checked + .checkbox-parts {
+    .icon-checkbox_checked {
+      display: inline;
+    }
+    .icon-checkbox_def {
+      display: none;
+    }
+  }
+  &-parts {
+    .icon-checkbox_checked {
+      display: none;
+    }
+
+    .icon {
+    }
+  }
+}
+
+// チェックリスト
+.check-result {
+  display: none;
+  margin: 0 0 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.radiobox {
+  margin: 0 5px 0 0;
+}

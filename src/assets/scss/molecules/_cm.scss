@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/*
+  cm
+ */
+.cm-modal {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+
+  &__wrapp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2000;
+  }
+  &__content {
+    width: 70%;
+  }
+  &__video {
+    video {
+      width: 100%;
+    }
+  }
+
+  &__bt-close {
+    height: 20px;
+    text-align: right;
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    // position: flex;
+    // justify-content: center;
+    background: #000;
+    opacity: 0.8;
+  }
+}
+
+// 再生アイコン
+.cm-play {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin-left: -26px;
+  // margin-top: -26px;
+}
+.cm-play::before,
+.cm-play::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  content: "";
+  vertical-align: middle;
+}
+
+.cm-play::before {
+  width: 55px;
+  height: 55px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: $key;
+}
+.cm-play::after {
+  left: 21px;
+  box-sizing: border-box;
+  width: 23px;
+  height: 23px;
+  border: 11px solid transparent;
+  border-left: 18px solid #fff;
+}

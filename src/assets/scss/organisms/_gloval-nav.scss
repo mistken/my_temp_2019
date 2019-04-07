@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/*
+  gloval-nav
+ */
+$header-height: 73px;
+
+.gloval-nav {
+  // position: relative;
+  width: 100%;
+
+  @include media(tab) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    //flex-flow: row;
+    align-items: center;
+  }
+  @include media(sp) {
+    position: absolute;
+    top: $header-height;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: 0.5s;
+    &.open {
+      top: $header-height;
+      height: calc(100vh - 73px);
+    }
+  }
+
+  &__block {
+    //position: relative;
+    background: #fff;
+
+    @include media(tab) {
+      flex: 1;
+      border-bottom: 4px solid #fff;
+      transition: 0.4s;
+      cursor: pointer;
+
+      &:last-of-type {
+        .gloval-nav__item-inner {
+          border-right: 1px solid #ccc;
+        }
+      }
+      &:hover,
+      &.current {
+        border-bottom: 4px solid $key;
+        .gloval-nav__item {
+          color: $key;
+        }
+      }
+      //ドロップメニュー 表示
+      &:hover > .dropmenu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  //アンカー
+  &__item {
+    display: block;
+    padding: 0;
+    color: #666;
+    @include font-size(15);
+    //font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    @include media(tab) {
+      margin: 10px 0;
+    }
+
+    &-inner {
+      display: block;
+      white-space: nowrap;
+
+      @include media(tab) {
+        padding: 0 14px;
+        border-left: 1px solid #ccc;
+      }
+      @include media(sp) {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}
+
+// グローバルナビ　開閉 ボタン モジュール
+.gloval-nav-btn {
+  margin-left: 10px;
+  @include media(tab) {
+    display: none;
+  }
+
+  &__block {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    z-index: 100;
+    cursor: pointer;
+    &.open {
+      .gloval-nav-btn__icon {
+        background: transparent;
+        &:before,
+        &:after {
+          margin-top: 0;
+          background: #000;
+        }
+        &:before {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+
+        &:after {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    margin: -1px 0 0 -10px;
+    background: #000;
+    transition: 0.2s;
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: #000;
+      transition: 0.3s;
+    }
+    &:before {
+      margin-top: -8px;
+    }
+    &:after {
+      margin-top: 6px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 1px;
+    left: 5px;
+    font-size: 8px;
+    color: #fff;
+  }
+}
+
+/* ドロップメニュー */
+.dropmenu {
+  background: #ededed;
+  z-index: 100;
+
+  @include media(tab) {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 4px 0 0 0;
+    padding: 20px 0;
+    background: $key;
+    //border-top: 1px solid #ccc;
+    box-shadow: 0px 5px 3px -3px rgba(0, 0, 0, 0.1);
+  }
+  @include media(sp) {
+    display: none;
+    &.open {
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    @include media(sp) {
+      padding: 0;
+    }
+  }
+
+  &__item {
+    border-bottom: none;
+    @include media(tab) {
+      padding: 10px 0;
+      a {
+        color: #fff;
+        font-weight: normal;
+        padding: 0 10px;
+        &:hover {
+          color: #fff;
+          opacity: 0.6;
+        }
+      }
+    }
+    @include media(sp) {
+      border-bottom: 1px solid #fff;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      a {
+        padding: 20px 10px 20px 40px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

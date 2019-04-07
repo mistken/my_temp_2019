@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/*
+  box
+  使用ケースないかも
+ */
+
+/* ベース */
+.box {
+  display: block;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: 0 0 20px;
+  &:last-of-type {
+    margin: 0;
+  }
+
+  &__block {
+    margin: 0 0 20px;
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+  &__item {
+    .image {
+      margin: 0 !important;
+    }
+  }
+
+  &.is-space-1 {
+  }
+  &.is-space-2 {
+    padding: 15px;
+  }
+  &.is-space-3 {
+    padding: 5px;
+  }
+
+  &.is-round {
+    border-radius: 10px;
+  }
+
+  // 背景
+  &[class*="is-bg-"] {
+    border-radius: 5px;
+  }
+  // ライン
+  &[class*="is-line-"] {
+    color: $text_def;
+    border-style: solid;
+    border-width: 4px;
+  }
+  & .txt {
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+a.box {
+  text-decoration: none;
+  color: #333;
+}

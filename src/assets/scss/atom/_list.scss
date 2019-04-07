@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+/*
+  list
+  ul ol含む
+ */
+
+.list {
+  width: 100%;
+  &__block {
+    padding: 14px 0;
+
+    & > .list__item {
+      & ul:last-of-type,
+      & ol:last-of-type {
+        margin: 0;
+      }
+    }
+
+    &.is-space-1 {
+      padding: 30px 0;
+      @include media(sp) {
+        padding: 14px 0;
+      }
+    }
+    &.is-space-2 {
+      padding: 0 0 14px;
+      @include media(sp) {
+        padding: 0 0 7px;
+      }
+    }
+
+    &.is-line-b {
+      border-bottom-width: 1px;
+      border-color: #ccc;
+    }
+  }
+
+  &__item {
+    .ttl:last-of-type {
+      margin: 0;
+    }
+    .txt {
+      margin: 0 !important;
+    }
+    .btn-group {
+      margin: 0 !important;
+    }
+  }
+
+  // & .is-line-b {
+  //   border-bottom-width: 1px;
+  //   border-bottom-color: $md_gray;
+  //   &:last-of-type {
+  //     border: none;
+  //   }
+  // }
+
+  & > .list__item {
+    & ul,
+    & ol {
+      margin: 0;
+    }
+  }
+  .list__item {
+    .image {
+      margin: 0;
+    }
+  }
+}
+
+// ul ol
+ul,
+ol {
+  list-style: none;
+  counter-reset: number;
+  width: 100%;
+  margin: 0 0 30px;
+  padding: 0;
+
+  &.is-ul-center {
+    // 固有すぎる
+    padding: 20px 20px 10px;
+    margin: 0;
+  }
+
+  &.is-group {
+    border-left: 2px solid #ccc;
+    margin-left: 20px !important;
+    padding: 10px 0 10px 16px !important;
+    height: auto !important;
+    width: auto !important;
+    border-radius: 0 !important;
+    & > .list__item {
+      position: relative;
+      margin: 0 0 5px;
+      padding-left: 0 !important;
+      line-height: 1.6;
+      &:before {
+        display: none !important;
+      }
+    }
+  }
+
+  .list__item {
+    position: relative;
+    margin: 0 0 10px;
+    // line-height: 1.6;
+
+    &.is-line-b {
+      padding-bottom: 20px;
+      border-bottom-width: 1px;
+      border-bottom-color: $md_gray;
+      &:last-of-type {
+        border: none;
+      }
+    }
+    &.is-line-b-s {
+      padding-bottom: 10px;
+      border-bottom-width: 1px;
+      border-bottom-color: $md_gray;
+      &:last-of-type {
+        border: none;
+      }
+    }
+
+    &.ttl:last-of-type {
+      margin: 0;
+    }
+    &.txt {
+      margin: 0 0 10px !important;
+    }
+  }
+  // ネスト
+  & ul,
+  & ol {
+    margin: 15px 0 !important;
+  }
+  & ul:last-of-type,
+  & ol:last-of-type {
+    margin: 0;
+  }
+}
+// リストスタイルなし
+.is-nostyle {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > .list__item {
+    position: relative;
+    margin: 0 0 5px;
+    padding-left: 0 !important;
+    line-height: 1.6;
+    &:before {
+      display: none !important;
+    }
+  }
+  // ネスト
+  & ul,
+  & ol {
+    margin: 5px 20px;
+  }
+}
+
+//ul
+.ul-list {
+  .list__item {
+    padding-left: 1.2em;
+    &:before {
+      content: "●";
+      display: inline-block;
+      margin: 0 5px 0 0;
+      color: $gray;
+      position: absolute;
+      left: 0;
+    }
+
+    & > ul li {
+      &:before {
+        counter-increment: number;
+        content: "・";
+        color: $black;
+      }
+    }
+  }
+}
+
+//ol
+.ol-list {
+  & > .list__item {
+    padding-left: 1.8em;
+    &:before {
+      counter-increment: number;
+      content: counter(number) ".";
+      display: inline-block;
+      width: 1.6em;
+      height: 1.6em;
+      margin: 0 5px 0 0;
+      text-align: center;
+      color: $key;
+      position: absolute;
+      left: 0;
+    }
+
+    & > ol li {
+      &:before {
+        counter-increment: number;
+        content: "(" counter(number) ")";
+        color: $black;
+      }
+    }
+  }
+}
+
+// ol 丸
+.ol-list.is-circle {
+  & > .list__item {
+    position: relative;
+    padding-left: 1.8em;
+    &:before {
+      counter-increment: number;
+      content: counter(number);
+      background: $key;
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5em;
+      margin: 0 5px 0 0;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+  }
+  &.is-circle-orange {
+    & > .list__item {
+      &:before {
+        counter-increment: number;
+        content: counter(number);
+        background: $orange;
+      }
+    }
+  }
+}
+
+// ol チェックリスト
+.ol-list.is-circle-check {
+  & > .list__item {
+    position: relative;
+    padding-left: 2.4em;
+    &:before {
+      counter-increment: number;
+      content: "Q" counter(number);
+      background: $orange;
+      display: inline-block;
+      width: 2.4em;
+      height: 2.4em;
+      line-height: 2.4em;
+      margin: 0 16px 0 0;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      @include font-size(12);
+    }
+  }
+}

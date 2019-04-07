@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+  product-spec
+  製品情報スペック
+ */
+
+/* カルーセル */
+
+/* 健康情報インデックス入り口 */
+.k1ban-content {
+  text-decoration: none;
+  &__block {
+    padding: 40px;
+    @include media(sp) {
+      padding: 30px;
+    }
+  }
+  &__item {
+  }
+
+  .hero {
+    @include media(sp) {
+      display: none;
+    }
+  }
+}

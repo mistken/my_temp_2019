@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*
+  card
+  説明：
+ */
+
+/* ベース */
+.card {
+  display:block;
+  background: #fff;
+  width: 100%;
+  color: $text_def;
+  transition: 0.4s;
+  text-decoration: none;
+
+  &:hover {
+    color: $key;
+  }
+
+  .image{
+    margin:0;
+  }
+  //レイアウト調整用ブロック
+  &__content {
+    padding: 10px;
+    .ttl{
+      margin:0 0 5px;
+    }
+    .txt{
+      margin:0 0 5px;
+    }
+  }
+}
+
+// ラッパー リスト
+// ボタン グループ
+.card-list {
+  &__block {
+  }
+  &__item {
+  }
+}

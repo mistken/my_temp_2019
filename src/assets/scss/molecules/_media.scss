@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/*
+  media
+  説明：
+ */
+
+/* ベース */
+.media {
+  position: relative;
+  display: block;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  color: $text_def;
+  transition: 0.4s;
+  text-decoration: none;
+
+  &:hover {
+    color: $key;
+    .maru {
+      //ゴールドルパール
+      border-color: $key !important;
+    }
+  }
+
+  &.is-line-white {
+    border-color: #fff;
+    background-color: transparent;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  .ttl,
+  .txt {
+    margin: 0 0 5px;
+  }
+
+  .image {
+    margin-bottom: 0px;
+    overflow: hidden;
+  }
+
+  //レイアウト調整用ブロック
+  &__content {
+    position: relative;
+    padding: 14px 0;
+
+    // content 内 image要素
+    .image {
+      margin: 0 0 16px;
+    }
+  }
+  &[class*="is-line-"] {
+    .media__content {
+      padding: 14px;
+    }
+  }
+
+  // cm
+  &.is-cm {
+    &:hover {
+      color: #333;
+    }
+    .image {
+      position: relative;
+      margin: 0 0 10px;
+      cursor: pointer;
+    }
+    .ttl {
+      margin: 0 0 24px;
+    }
+  }
+}
+
+/* バリエーション */
+.media--horizontal {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+
+  .image {
+    width: 200px;
+    @include media(sp) {
+      width: 120px;
+    }
+    img {
+      max-width: 100%;
+      // max-height: 120px;
+      vertical-align: top;
+      // @include media(sp) {
+      //   max-height: 75px;
+      // }
+    }
+  }
+  .media__content {
+    flex: 1;
+    padding: 0 15px;
+    .txt {
+      @include media(sp) {
+        display: none;
+      }
+    }
+  }
+}
+
+.media--vertical {
+  border-radius: 5px;
+}
+
+.media-list {
+  margin: 0 0 40px;
+  &:last-of-type {
+    margin: 0;
+  }
+  &__block {
+    // line関連まとめないと
+    &.is-line-b {
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}

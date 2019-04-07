@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*
+  product-category
+  部位・症状から探す
+ */
+
+.product-category {
+  margin: 0 0 30px;
+  padding: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+
+  @include media(sp) {
+    margin: 0 0 20px;
+  }
+
+  &__ttl {
+    flex-flow: column;
+    padding: 0 10px 0 0;
+    text-align: center;
+    @include media(sp) {
+      width: 100%;
+      padding: 0 0 10px;
+      text-align: center;
+    }
+
+    .icon {
+      margin: 0 0 5px;
+    }
+  }
+}

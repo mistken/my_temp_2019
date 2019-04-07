@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*
+  page-header
+ */
+
+.page-header {
+  @include media(sp) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__block {
+    //カラム
+    &.col,
+    &.col {
+      &:last-of-type {
+        padding-left: 40px;
+        @include media(sp) {
+          margin-top: 20px;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: 100%;
+    @include media(sp) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  // ttl
+  .ttl-group {
+    margin: 0 0 30px;
+    &.ttl-product {
+      margin: 0;
+    }
+  }
+
+  // 画像
+  &__image {
+    &-product {
+      position: relative;
+      width: 100%;
+      padding: 36px;
+      border-radius: 4px;
+      background: #fff;
+      text-align: center;
+      @include media(sp) {
+        padding: 30px;
+      }
+    }
+  }
+}

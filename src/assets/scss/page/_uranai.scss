@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*
+  uranai
+ */
+.uranai {
+  &__head {
+  }
+  &__body {
+    padding: 20px 30px;
+    border-top: 4px solid #94793f;
+    border-bottom: 4px solid #94793f;
+  }
+  &__foot {
+  }
+
+  &__head,
+  &__foot {
+    text-align: center;
+    img {
+      vertical-align: bottom;
+    }
+  }
+
+  &__name {
+  }
+
+  &__result {
+    display: none;
+    margin: 20px 0;
+    .ttl {
+      margin-bottom: 10px;
+    }
+    .txt {
+      margin-bottom: 30px !important;
+    }
+    .rank {
+      color: #ccc;
+    }
+  }
+  .list__item:nth-child(2) {
+    margin-left: -48px;
+  }
+  .list__item.open {
+    .uranai__result {
+      display: block;
+    }
+  }
+  // 色
+  .is-love {
+    color: #f47272;
+  }
+  .is-work {
+    color: #6294ce;
+  }
+  .is-money {
+    color: #d5c447;
+  }
+
+  //占いリスト
+  .ol-list.is-list-uranai {
+    .list__block {
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #94793f;
+
+      position: relative;
+      padding-left: 3.2em;
+      &:before {
+        counter-increment: number;
+        content: counter(number);
+        background: $uranai;
+        display: inline-block;
+        width: 3em;
+        height: 3em;
+        line-height: 3em;
+        margin: 0 5px 0 0;
+        text-align: center;
+        border-radius: 50%;
+        color: #fff;
+        position: absolute;
+        top: 18px;
+        @include media(sp) {
+          top: 18px;
+        }
+
+        left: 0;
+      }
+    }
+    .list__block:nth-child(1) {
+      &:before {
+        background: #d6bc5b;
+      }
+    }
+    .list__block:nth-child(2) {
+      &:before {
+        background: #bbbbbb;
+      }
+    }
+    .list__block:nth-child(3) {
+      &:before {
+        background: #d9983d;
+      }
+    }
+  }
+}

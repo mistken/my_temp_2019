@@ -1,0 +1,57 @@
+/*
+  pagenation
+  説明：ページャー
+ */
+
+.pager {
+  display: flex;
+  margin: 20px 0 0 0;
+  justify-content: center;
+  /* 共通ボタン */
+  .btn {
+    position: relative;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+
+    // 枠線
+    &-outline {
+      border: 1px solid #888;
+      &:disabled {
+        border: 1px solid #ccc !important;
+      }
+    }
+  }
+}
+
+/* ボタン レイアウト */
+.btn-prev {
+  margin-right: 15px;
+}
+.btn-next {
+  margin-left: 15px;
+}
+
+/* カウンター */
+.page-counter {
+  margin-top: 10px;
+  padding: 0 50px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+/* ページャー用 他でも使用するなら汎用的な名前に */
+.btn-prev,
+.btn-next {
+  &:hover {
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+
+    .icon {
+      fill: #fff;
+    }
+  }
+}
